@@ -38,8 +38,9 @@ function ListAttributes({items,attr,attrTitle}) {
 }
 
 function ImageWrapper(picture){
+	console.log(picture)
 	return 	 (<div className="flex flex-row justify-center items-center">
-				<Image src={picture.name} /> 
+<Image loader={picture.name} width={200} height={200} src="/default.png"/> 
 			  </div>)
 }
 function Information(pokemon) {
@@ -77,7 +78,7 @@ export default function Home() {
 
 		        <div className="justify-left items-left flex-1">
 						<div>
-							<Image src='/logo.png' /> 
+							<Image src='/logo.png' width={200} height={100} /> 
 						</div>
 						<input
 						  value={name}
@@ -91,7 +92,7 @@ export default function Home() {
 								  setPokemon(pokemonData)
 							  }
 							  { pokemonData==404 && 
-								  setPicture('/not_found.png')
+								  setPicture('/not_found.jpg')
 							  }
 							}
 						  }}
